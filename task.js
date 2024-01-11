@@ -1,11 +1,12 @@
 function getDay(date) {
-    let day = date.getDay()
-    if(day == 0) day = 7
-    return day -1
+    let day = date.getDay();
+    if(day == 0) {
+        day = 7;
+    }
+    return day -1;
 }
-    function createCalendar(elem, year, month) {
-     elem = document.querySelector(elem)
-
+function createCalendar(elem, year, month) {
+    
     let mon = month - 1;
     let d = new Date(year, mon)
 
@@ -31,6 +32,7 @@ function getDay(date) {
     while(d.getMonth() ==mon){
         table += '<td>' + d.getDate() + '</td>'
         if(getDay(d) % 7 ==6) {
+            //взятие остатка от деления
             table += '</tr><tr>'
         }
         d.setDate(d.getDate()+1)
